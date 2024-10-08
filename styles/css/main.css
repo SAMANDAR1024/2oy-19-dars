@@ -254,10 +254,10 @@
   transition: 1s;
 }
 .employees2 .main-cards2 .main-card2 img:hover:nth-child(2) {
-  scale: 1.1;
+  scale: 1.2;
 }
 .employees2 .main-cards2 .main-card2 img:hover:nth-child(3) {
-  scale: 1.1;
+  scale: 1.2;
 }
 .employees2 .main-cards2 .main-card2 img:active {
   scale: 0.9;
