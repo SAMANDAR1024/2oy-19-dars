@@ -243,25 +243,21 @@
   justify-content: center;
 }
 .employees2 .main-cards2 .main-card2 {
-  transition: 1s;
   cursor: pointer;
   align-items: center;
   display: flex;
   width: 323px;
-}
-.employees2 .main-cards2 .main-card2:hover {
-  scale: 1.2;
-}
-.employees2 .main-cards2 .main-card2:active {
-  scale: 0.9;
 }
 .employees2 .main-cards2 .main-card2 img {
   margin-left: -20px;
   cursor: pointer;
   transition: 1s;
 }
-.employees2 .main-cards2 .main-card2 img:hover {
-  scale: 1.2;
+.employees2 .main-cards2 .main-card2 img:hover:nth-child(2) {
+  scale: 1.1;
+}
+.employees2 .main-cards2 .main-card2 img:hover:nth-child(3) {
+  scale: 1.1;
 }
 .employees2 .main-cards2 .main-card2 img:active {
   scale: 0.9;
