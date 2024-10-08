@@ -1,0 +1,896 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/recoleta");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+@import "variable";
+@import "placeholder";
+@import "mixins";
+@import "loop";
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 130px;
+}
+
+.headertop {
+  background: $main-bg-color;
+  padding: 0 130px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  nav {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    padding-top: 21px;
+    label {
+      i {
+        color: $nav-color-fff;
+        font-size: 40px;
+      }
+    }
+    .phone {
+      display: none;
+    }
+    .leftactions {
+      display: flex;
+      margin-left: 650px;
+      gap: 24px;
+      align-items: center;
+      .login {
+        @include button(transparent, #fff);
+        font-family: Noto Sans;
+      }
+      .start {
+        @include button();
+        padding: 15px 25px;
+        font-family: Noto Sans;
+        border-radius: 25px;
+      }
+      a {
+        color: $nav-color-fff;
+        font-size: 14px;
+        font-family: Noto Sans;
+        margin-right: 20px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    .maininfo {
+      h1 {
+        @include h2-style;
+        color: $main-color;
+        margin-bottom: 20px;
+
+        text-align: left;
+      }
+      p {
+        color: $main-color;
+        @extend %sect2-p;
+      }
+    }
+  }
+}
+
+.maincard {
+  max-width: 1400px;
+  margin: 120px auto 0;
+  padding: 0 130px;
+  margin-bottom: 113px;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+
+  .item {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    .cardinfo {
+      padding-left: 30px;
+      max-width: 400px;
+      h2 {
+        @include h2-style;
+        margin-bottom: 27px;
+        text-align: left;
+      }
+      p {
+        @extend %sect2-p;
+      }
+    }
+  }
+}
+
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 66px;
+  margin-bottom: 120px;
+  .partner_wrap {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.quality {
+  background-color: $main-bg-color;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 66px 130px 120px;
+  h2 {
+    font-family: "Recoleta";
+    @include h2-style;
+    color: $main-color;
+    text-align: center;
+    margin-bottom: 73px;
+  }
+  .card_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .card {
+      width: 280px;
+      text-align: center;
+      p {
+        font-family: Noto Sans;
+        font-size: 18px;
+        color: $main-color;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.employees {
+  background: $main-section;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 66px 130px 120px;
+  text-align: center;
+  h2 {
+    @include h2-style;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 739px;
+  }
+  p {
+    @extend %sect2-p;
+    margin: 0 auto;
+    text-align: center;
+    width: 760px;
+  }
+  img {
+    display: none;
+  }
+}
+.employees2 {
+  background: $main-section;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 66px 130px 120px;
+  text-align: center;
+  h2 {
+    @include h2-style;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 739px;
+  }
+  p {
+    @extend %sect2-p;
+    margin: 0 auto;
+    text-align: center;
+    width: 760px;
+  }
+  .main-cards2 {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    .main-card2 {
+      align-items: center;
+      display: flex;
+      width: 323px;
+      img {
+        margin-left: -50px;
+      }
+      .img2 {
+        margin-left: 30px;
+      }
+      .text {
+        p {
+          @extend %sect2-p;
+          width: 300px;
+          text-align: center;
+        }
+        h3 {
+          width: 80px;
+          margin-top: 15px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+.menu_navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 130px;
+  background-color: lighten($main-bg-color, 10%);
+  width: 100vw;
+  height: 100vh;
+  gap: 50px;
+  position: fixed;
+  transition: 1s;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+
+  button {
+    @include button();
+    padding: 10px 30px;
+    border-radius: 25px;
+  }
+  a {
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: right;
+    color: $nav-color-fff;
+    text-decoration: none;
+  }
+  .nav_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    i {
+      font-size: 49px;
+      color: $nav-color-fff;
+    }
+  }
+}
+.section2 {
+  margin-bottom: 50px;
+  h2 {
+    @include h2-style;
+  }
+  p {
+    @extend %sect2-p;
+    text-align: center;
+  }
+  .cards {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    .card-sec {
+      background-color: $main-color;
+      padding: 50px 40px;
+      box-shadow: 5px 10px 15px $box;
+      width: 353px;
+      height: 393px;
+      border-radius: 15px;
+      transition: 1s;
+      &:hover {
+        scale: 1.1;
+      }
+      h3 {
+        font-family: Recoleta;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 28px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      ul {
+        li {
+          margin-top: 10px;
+          a {
+            text-decoration: none;
+            color: #163a24;
+            font-family: Noto Sans;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 21.79px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+.seccc2 {
+  background-color: $main-color;
+  padding: 50px 40px;
+  width: 353px;
+  box-shadow: 5px 10px 15px $box;
+  height: 413px;
+  border-radius: 15px;
+}
+
+input {
+  display: none;
+}
+@media (max-width: 1224px) {
+  .headertop {
+    nav {
+      .phone {
+        display: block;
+      }
+      .leftactions {
+        display: none;
+      }
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 400px;
+        margin-bottom: 50px;
+      }
+      .maininfo {
+        margin-top: 50px;
+        h1 {
+          @include h2-style-media;
+        }
+        p {
+          font-size: 24px;
+          line-height: 40px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .maincard {
+    .item {
+      img {
+        width: 400px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .cardinfo:nth-child(1) {
+        display: none;
+      }
+      .cardinfo:nth-child(2) {
+        h2 {
+          @include h2-style-media;
+        }
+        p {
+          font-size: 18px;
+          line-height: 40px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .partner {
+    h2 {
+      @include h2-style-media;
+    }
+  }
+  .quality {
+    h2 {
+      @include h2-style-media;
+    }
+    .card_wrapper {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      .card {
+        text-align: center;
+      }
+    }
+  }
+  #check:checked + .menu_navbar {
+    transform: translateX(0);
+    transition: 1s;
+  }
+  .employees {
+    // display: none;
+    h2 {
+      @include h2-style-media;
+      width: 300px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 30px;
+      width: 300px;
+    }
+    img {
+      display: none;
+    }
+  }
+  .employees2 {
+    // display: none;
+    h2 {
+      @include h2-style-media;
+      width: 300px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 30px;
+      width: 300px;
+    }
+  }
+  .section2 {
+    h2 {
+      @include h2-style-media;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+    .cards {
+      .card-sec {
+        width: 300px;
+        h3 {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+  .menu_navbar {
+    padding: 20px 115px;
+    align-items: center;
+    .nav_wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .headertop {
+    nav {
+      .phone {
+        display: block;
+      }
+      .leftactions {
+        display: none;
+      }
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 400px;
+        margin-bottom: 50px;
+      }
+      .maininfo {
+        margin-top: 50px;
+        h1 {
+          @include h2-style-media;
+        }
+        p {
+          font-size: 24px;
+          line-height: 40px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .maincard {
+    .item {
+      img {
+        width: 400px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .cardinfo:nth-child(1) {
+        display: none;
+      }
+      .cardinfo:nth-child(2) {
+        h2 {
+          @include h2-style-media;
+        }
+        p {
+          font-size: 18px;
+          line-height: 40px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .partner {
+    h2 {
+      @include h2-style-media;
+    }
+  }
+  .quality {
+    h2 {
+      @include h2-style-media;
+    }
+    .card_wrapper {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      .card {
+        text-align: center;
+      }
+    }
+  }
+  #check:checked + .menu_navbar {
+    transform: translateX(0);
+    transition: 1s;
+  }
+  .employees {
+    h2 {
+      @include h2-style-media;
+      width: 300px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 30px;
+      width: 300px;
+    }
+    img {
+      display: none;
+    }
+  }
+  .employees2 {
+    h2 {
+      @include h2-style-media;
+      width: 300px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 30px;
+      width: 300px;
+    }
+  }
+  .section2 {
+    h2 {
+      @include h2-style-media;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+    .cards {
+      .card-sec {
+        width: 300px;
+        h3 {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+  .menu_navbar {
+    padding: 20px 115px;
+    align-items: center;
+    .nav_wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .headertop {
+    padding: 20px;
+    nav {
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      label {
+        margin-left: -40px;
+      }
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 300px;
+        margin-bottom: 50px;
+      }
+      .maininfo {
+        margin-top: 50px;
+        h1 {
+          @include h2-style-mediaP;
+        }
+        p {
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .maincard {
+    padding: 0;
+    .item {
+      padding: 0;
+      img {
+        width: 300px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .cardinfo:nth-child(1) {
+        display: none;
+      }
+      .cardinfo:nth-child(2) {
+        h2 {
+          @include h2-style-mediaP;
+        }
+        p {
+          font-size: 16px;
+          line-height: 20px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .partner {
+    h2 {
+      @include h2-style-mediaP;
+    }
+    .partner_wrap {
+      gap: 20px;
+      img {
+        width: 80px;
+      }
+    }
+  }
+  .quality {
+    padding: 20px 10px;
+    h2 {
+      font-size: 24px;
+      line-height: 40px;
+      margin-bottom: 30px;
+    }
+    .card_wrapper {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      img {
+        width: 70px;
+      }
+      .card {
+        text-align: center;
+      }
+    }
+  }
+  #check:checked + .menu_navbar {
+    transform: translateX(0);
+    transition: 1s;
+  }
+  .employees {
+    padding: 20px 25px;
+    h2 {
+      @include h2-style-mediaP;
+      width: 300px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 30px;
+      margin-bottom: 30px;
+      width: 300px;
+    }
+    img {
+      display: none;
+    }
+  }
+  .employees2 {
+    padding: 20px 25px;
+    h2 {
+      @include h2-style-mediaP;
+      width: 300px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 30px;
+      margin-bottom: 30px;
+      width: 300px;
+    }
+  }
+  .section2 {
+    padding: 20px 25px;
+    h2 {
+      @include h2-style-mediaP;
+    }
+    p {
+      font-size: 16px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+    .cards {
+      .card-sec {
+        width: 300px;
+        h3 {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+  .menu_navbar {
+    padding: 20px 25px;
+    .nav_wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .headertop {
+    padding: 20px;
+    margin-bottom: 10px;
+    nav {
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 250px;
+        margin-bottom: 10px;
+      }
+      .maininfo {
+        margin-top: 50px;
+        h1 {
+          @include h2-style-mediaH;
+        }
+        p {
+          font-size: 15px;
+          line-height: 24px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .maincard {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+    .item {
+      padding: 0;
+      img {
+        width: 250px;
+        // margin-top: 20px;
+        // margin-bottom: 10px;
+      }
+      .cardinfo:nth-child(1) {
+        display: none;
+      }
+      .cardinfo:nth-child(2) {
+        h2 {
+          @include h2-style-mediaH;
+        }
+        p {
+          font-size: 15px;
+          line-height: 20px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .partner {
+    margin-bottom: 15px;
+    gap: 0;
+    h2 {
+      @include h2-style-mediaH;
+    }
+    .partner_wrap {
+      gap: 20px;
+      img {
+        width: 65px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .quality {
+    margin-top: 4px;
+    padding: 20px 10px;
+    h2 {
+      padding: 0;
+      margin-top: 0;
+      @include h2-style-mediaH;
+    }
+    .card_wrapper {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      img {
+        width: 65px;
+      }
+      .card {
+        text-align: center;
+      }
+    }
+  }
+  #check:checked + .menu_navbar {
+    transform: translateX(0);
+    transition: 1s;
+  }
+  .employees {
+    padding: 20px 25px;
+    h2 {
+      @include h2-style-mediaH;
+      width: 270px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 30px;
+      margin-bottom: 20px;
+      width: 270px;
+    }
+    img {
+      display: none;
+    }
+  }
+  .employees2 {
+    padding: 20px 25px;
+    h2 {
+      @include h2-style-mediaH;
+      width: 270px;
+    }
+    p {
+      width: 270px;
+      font-size: 14px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+  }
+  .section2 {
+    padding: 20px 25px;
+    h2 {
+      @include h2-style-mediaH;
+    }
+    p {
+      font-size: 14px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+    .cards {
+      .card-sec {
+        width: 250px;
+        h3 {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+  .menu_navbar {
+    padding: 20px 25px;
+    .nav_wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
